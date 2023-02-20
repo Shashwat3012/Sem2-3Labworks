@@ -1,0 +1,6 @@
+Project Abstract-
+	E-Healthcare System is a system(website) that we will create which would optimize the process of monitoring
+and treating the patients and would help the doctors monitor the health conditions of patients remotely. We could
+also use this for keeping record of the patients medical history in a central government server which can be accessed
+by a hospital at times of medical emergency to fasten up the process. This website can also help in suggesting treatment
+plans to patient and for booking an appointment with the concerned doctor.

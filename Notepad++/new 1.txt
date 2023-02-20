@@ -1,0 +1,13 @@
+Git bash/git
+postgres
+node js
+angular cli
+java jdk
+intellij
+vs code
+
+
+cd ..
+
+localhost:4200/login
+localhost:4200/home

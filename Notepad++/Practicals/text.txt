@@ -1,0 +1,132 @@
+// MergeSort ALgorithm
+
+#include <stdio.h>
+
+void merge(int arr[], int p, int q, int r){
+    int n1 = q-p+1;
+    int n2 = r-q;
+
+    int L[n1], M[n2];
+    for(int i=0; i<n1; i++){
+        L[i] = arr[p+i];
+    }
+    for(int j=0; j<n2; j++){
+        M[j] = arr[q+j+1];
+    }
+    int i=0, j=0, k=p;
+
+    while(i<n1 && j<n2){
+        if(L[i]<=M[j]){
+            arr[k] = L[i];
+            i++;
+        }
+        else{
+            arr[k] = M[j];
+            j++;
+        }
+        k++;
+    }
+
+    while(i<n1){
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+    while(j<n2){
+        arr[k] = M[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(int arr[], int l, int r){
+    if(l < r){
+        int m = l + (r-l) / 2;
+        mergeSort(arr, l, m);
+        mergeSort(arr, m+1, r);
+        merge(arr, l, m, r);
+    }
+}
+
+void printArray(int arr[], int size){
+    printf("\nThe sorted array is: \n");
+    for(int x=0; x<size; x++){
+        printf("%d\t", arr[x]);
+    }
+}
+
+int main(){
+    int arr[100], size, x;
+    printf("\nEnter the size of the array: ");
+    scanf("%d", &size);
+
+    printf("\nEnter the %d elements: \n", size);
+    for(x=0; x<size; x++){
+        scanf("%d", &arr[x]);
+    }
+    mergeSort(arr, 0, size-1);
+    printArray(arr, size);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Parentheses
+
+#include <stdio.h>
+#include <string.h>
+
+char s[20];
+int top = -1;
+void push(char);
+char pop();
+
+int main(){
+    char a[20], t;
+    int i, f=1;
+    printf("Enter the string: \n");
+    scanf("%s", a);
+    for(i=0; i<strlen(a); i++){
+        if(a[i]=='(' || a[i]=='{' || a[i]=='['){
+            push(a[i]);}
+        if(a[i]==')' || a[i]=='}' || a[i]==']'){
+            if(top==-1){
+                f=0;}
+            else{
+                t=pop();
+                if(a[i]==')'&&(t=='}' || t==']')){
+                    f=0;}
+                if(a[i]=='}'&&(t==')' || t==']')){
+                    f=0;}
+                if(a[i]==']'&&(t=='}' || t==')')){
+                    f=0;}
+            }
+        }
+    }
+
+    if(top>=0){
+        f=0;}
+    if(f==0){
+        printf("Unbalanced!");
+    }
+    else{
+        printf("Balanced!");
+    }
+    return 0;
+}
+
+void push(char a){
+    s[++top] = a;
+}
+
+char pop(){
+    return s[top--];
+}

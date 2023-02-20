@@ -1,0 +1,11 @@
+make a website that we will provide to hospitals for online management of their paperwork
+the home page will have about us, contact us, specialities that we offer, new registration, Patient Login and Doctor Login
+after new registration- the patient will have to fill in his/her details(like height, weight, bmi,etc.) after undergoing a checkup at our hospital
+in patient login he will be able to see his current treatment plan, upcoming appointments, Lab and test reports, profile (he can see his height, weight, bmi,etc.), 
+	consulted doctors and his medicine course along with some positive quotes
+in Doctor login he will able to see the current condition of admitted patients that would be linked to/ updated by the nurse or wardboy
+	he can see his upcoming appointments and personalized view of his patients health records
+after registering, the person's medical history in comapct form will be visible to the hospital that is accessing it
+	this will be done by assigning a unique code to every individual and storing their medical histroy in that code on a central government server
+	this can be accessed only by those hospitals that are registered under government at only at the time of emergency like blood loss,etc.
+	so that we do not waste time in regular checkups and can immediately start treatment according to the medical history of the patient
